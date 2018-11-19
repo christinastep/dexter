@@ -57,7 +57,9 @@ button {
   bottom: 0;
   margin-bottom: 1%;
   z-index: 3;
-  left: 46.5%; }
+  left: 46.5%;
+  opacity: 0;
+  animation: scrollFade 0.8s 2s forwards; }
 
 section {
   position: relative;
@@ -112,6 +114,11 @@ section {
       .intro .intro__illustration--welle--3 {
         margin-top: -22%; }
 
+@keyframes scrollFade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 @keyframes boat {
   from {
     transform: rotate(5deg); }
@@ -151,5 +158,65 @@ section {
       margin-left: 22%;
       bottom: 70px;
       animation: sac 2s ease-in-out infinite alternate; }
+
+.intro--first {
+  position: relative;
+  overflow: hidden; }
+  .intro--first .intro--first__content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%; }
+    .intro--first .intro--first__content .logo--dexter {
+      max-width: 400px;
+      display: inline-block;
+      margin-bottom: 30px; }
+    .intro--first .intro--first__content p {
+      color: #fff;
+      font-size: 1.2em; }
+
+.blood--box {
+  position: absolute; }
+
+.blood {
+  background-color: #db1212;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  position: relative; }
+  .blood:before, .blood:after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: #db1212;
+    position: absolute; }
+  .blood:before {
+    height: 50px;
+    width: 50px;
+    bottom: -70px;
+    left: 20px; }
+  .blood:after {
+    height: 30px;
+    width: 30px;
+    bottom: -90px;
+    right: -40px; }
+
+.blood--box--small {
+  top: 10%;
+  left: 10%; }
+
+.blood--box--big {
+  bottom: 50px;
+  right: -30px; }
+  .blood--box--big .blood {
+    height: 200px;
+    width: 200px; }
+    .blood--box--big .blood:before {
+      height: 100px;
+      width: 100px;
+      left: -50px;
+      bottom: -100px; }
 
 /*# sourceMappingURL=style.css.map */

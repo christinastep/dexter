@@ -14,6 +14,7 @@ $lg: 1024px;
 }
 
 $color--main:#df8f97;
+$color--blood:#db1212;
 
 html,
 body {
@@ -85,6 +86,8 @@ button {
   margin-bottom: 1%;
   z-index: 3;
   left: 46.5%;
+  opacity: 0;
+  animation: scrollFade 0.8s 2s forwards;
 }
 
 section {
@@ -156,6 +159,11 @@ section {
   } 
 }
 
+@keyframes scrollFade{
+  from { opacity:0 }
+  to   { opacity: 1}
+}
+
 @keyframes boat{
   from { transform: rotate(5deg) }
   to   { transform: rotate(-5deg)}
@@ -201,6 +209,76 @@ section {
       margin-left: 22%;
       bottom:70px;
       animation: sac 2s ease-in-out infinite alternate;
+    }
+  }
+}
+
+.intro--first{
+  position: relative;
+  overflow: hidden;
+  .intro--first__content{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    .logo--dexter{
+      max-width: 400px;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    p{
+      color: #fff;
+      font-size:1.2em;
+    }
+  }
+}
+
+.blood--box{
+  position: absolute;
+}
+.blood{
+  background-color: #db1212;
+  height:75px;
+  width: 75px;
+  border-radius: 50%;
+  position: relative;
+  &:before, &:after{
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: #db1212;
+    position: absolute;
+  }
+  &:before{
+    height: 50px;
+    width: 50px;
+    bottom: -70px;
+    left: 20px;
+  }
+  &:after{
+    height: 30px;
+    width: 30px;
+    bottom: -90px;
+    right: -40px;
+  }
+}
+.blood--box--small{
+  top: 10%;
+  left: 10%;
+}
+.blood--box--big{
+  bottom: 50px;
+  right: -30px;
+  .blood{
+    height: 200px;
+    width: 200px;
+    &:before{
+      height: 100px;
+      width: 100px;
+      left: -50px;
+      bottom: -100px;
     }
   }
 }

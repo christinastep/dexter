@@ -1,0 +1,131 @@
+@keyframes boat{
+  from { transform: rotate(5deg) }
+  to   { transform: rotate(-5deg)}
+}
+
+@keyframes wave {
+  from { margin-left: -1%; }
+  to   { margin-left: -4%;}
+}
+
+@keyframes sac--big {
+  to   { transform: rotate(-10deg)}
+}
+
+@keyframes sac--small {
+  to   { transform: rotate(10deg)}
+}
+
+@keyframes air--bubble {
+  from{ transform: scale(1);bottom: 37vw;}
+  to   { transform: scale(.7);bottom: 60vw;}
+}
+
+
+.city__boat{
+  width: 30%;
+  right: 15%;
+  bottom: 17vw;
+  transform-origin: 50% 15%;
+  animation: boat 1.5s ease-in-out infinite alternate;
+  cursor: pointer;
+  z-index: 1;
+  @include sm-min {
+    bottom:10.5vw;
+  }
+}
+
+.city__city{
+  width: 80%;
+  left: 10%;
+  bottom: 24vw;
+  @include sm-min {
+    bottom:15vw;
+  }
+}
+
+.city__weave{
+  width: 110%;
+  height: auto;
+  left: -1%;
+  animation: wave 1.5s ease-in-out -0.7s infinite alternate;
+  &.city__weave--1{
+    bottom: 0%;
+    z-index: 3;
+    @include sm-min {
+      bottom:-3vw;
+    }
+  }
+  &.city__weave--2{
+    bottom: 8vw;
+    z-index: 2;
+    animation: wave 1.5s ease-in-out infinite alternate;
+    animation-delay: -15s;
+    @include sm-min {
+      bottom:2vw;
+    }
+  }
+  &.city__weave--3{
+    bottom: 16vw;
+    z-index: 1;
+    @include sm-min {
+      bottom:7vw;
+    }
+  }
+}
+
+.underwarter__ground{
+  width:100vw;
+  bottom: 0;
+}
+
+.underwarter__sack{
+  &.underwarter__sack--small{
+    width: 8%;
+    right: 24%;
+    bottom: 17vw;
+    animation: sac--small 2s ease-in-out -1s infinite alternate;
+  }
+  &.underwarter__sack--big{
+    width: 20%;
+    margin-left: 22%;
+    bottom:7vw;
+    animation: sac--big 2s ease-in-out infinite alternate;
+  }
+}
+
+.air{
+  height: 60px;
+  width: 50px;
+  bottom: 37vw;
+  right: 30vw;
+  transform: rotate(180deg);
+  .air__bubbles{
+    background-color: #fff;
+    transform-origin: bottom;
+    animation: air--bubble 2s infinite alternate;
+    &:before, &:after{
+      background-color: #fff;
+      content: none;
+    }
+    &--1{
+      width: 10px;
+      height: 10px;
+      top:35px;
+      left: 0px;
+    }
+    &--2{
+      width: 15px;
+      height: 15px;
+      top: 15px;
+      left: 8px; 
+    }
+    &--3{
+      width: 10px;
+      height: 10px;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+

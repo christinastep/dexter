@@ -1,0 +1,226 @@
+
+@keyframes scale-x-1{
+  from { transform: scaleX(0)}
+  to   { transform: scaleX(1)}
+}
+
+@keyframes air--bubble {
+  from{ transform: scale(1);bottom: 37vw;}
+  to   { transform: scale(.7);bottom: 60vw;}
+}
+
+
+.section--last {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  &__illustration{
+    position: absolute;
+  }
+}
+
+
+/* LABOR */
+
+@keyframes pipette{
+  from { transform: scaleY(1) }
+  to   { transform: scaleY(0)}
+}
+
+@keyframes blood_glas{
+  from { height:20%}
+  to   { height:70%}
+}
+
+@keyframes microscope--eye{
+  from { margin-bottom: 80%}
+  to   { margin-bottom: 61%}
+}
+
+@keyframes microscope--button{
+  from { transform: rotate(0deg)}
+  to   { transform: rotate(-160deg)}
+}
+
+
+.section--labor--first{
+
+  .illustration__blättchen{
+    @include absolute(60%,20px,auto,20%,10%,auto,#ECECEC);
+    @include sm-min{
+      width: 25%;
+      right: 38%;
+    }
+    &::before{
+      @include pseudo--absolute;
+      width: 20vw;
+      height: 20px;
+      bottom: 20px;
+      left:30%;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      animation: scale-x-1 3s ease-in-out infinite alternate;
+      @include sm-min{
+        width: 10vw;
+        left:30%;
+      }
+    }
+  }
+
+  .image-wrapp--pipette{
+    @include absolute(10%,auto,auto,30%,17%,auto,transparent);
+    transform: rotate(30deg);
+    @include sm-min{
+      width: 6vw;
+      right: 40%;
+    }
+    
+    &::after{
+      @include pseudo--absolute;
+      background-color: $color--blood;
+      width: 51%;
+      height: 40%;
+      bottom: 13.8%;
+      left: 25%;
+      animation: pipette 3s ease-in-out infinite alternate;
+      transform-origin: bottom;
+    }
+  }
+}
+
+
+.section--labor{
+  height: 100vh;
+  .section--labor__content{
+    .illustration-group__blood-test{
+      position: absolute;
+      width: 16%;
+      left: 6%;
+      bottom: 24vw;
+      @include sm-min{
+        width: 10%;
+        left: 10%;
+        bottom: 7vw;
+      }
+    }
+    .image-wrapp--glas{
+      position: absolute;
+      width: 30%;
+      bottom: 0;
+      &::after{
+        animation: blood_glas 2s ease-in-out infinite alternate;
+        @include pseudo--absolute;
+        background-color: $color--blood;
+        height: 30px;
+        width: 76%;
+        right: 12%;
+        bottom: 0;
+      }
+      &--1{
+        &::after{
+          animation-delay:-1s;
+        }
+      }
+      &--2{
+        right: 35%;
+        &::after{
+          animation-delay:-0.5s;
+        }
+      }
+      &--3{
+        right: 0;
+        &::after{
+          animation-delay:-1.5s;
+        }
+      }
+    }
+    .blood-test__illustration--holder{
+      position: absolute;
+      bottom: 0;
+    }
+
+    .illustration__table{
+      @include absolute(85%,24vw,auto,auto,0%,0%,#fff);
+      &::before{
+        @include pseudo--absolute;
+        height: 20px;
+        top: 0;
+        right: -30px;
+        left:0;
+        background-color: #ECECEC;
+      }
+      @include sm-min{
+        width: 90%;
+        height: 7vw;
+      }
+    }
+
+  
+    .illustration-group__microscope{
+      position: absolute;
+      width: 34%;
+      max-width: 250px;
+      bottom: 24vw;
+      left: 19%;
+      background-color: red;
+      @include sm-min{
+        width: 25%;
+        bottom: 7vw;    
+      }
+      .microscope__illustration {
+        position: absolute;
+        bottom: 0;
+        &--eye{
+          width: 20%;
+          right: 12%;
+          margin-bottom: 80%;
+          animation: microscope--eye 3s ease-in-out infinite alternate;
+        }
+        &--button{
+          width: 20%;
+          left: 39%;
+          margin-bottom: 81%;
+          animation: microscope--button 3s ease-in-out infinite alternate;
+        }
+        &--glas{
+          width: 30%;
+          height: 1vw;
+          right: 5%;
+          margin-bottom: 15.2vw;
+          @include sm-min{
+            margin-bottom: 11.2vw;
+          }
+          @media (min-width:997px) {
+            margin-bottom: 110px;
+          }
+        }
+      }
+      .image-wrapp--microscope-glas{
+        position: relative;
+        &::after{
+          @include pseudo--absolute;
+          width: 10%;
+          height: 1vw;
+          right: 15%;
+          bottom: 0%;
+          margin-bottom: 45%;
+          transform-origin: center;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

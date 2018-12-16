@@ -1,0 +1,36 @@
+.section--intro{
+  overflow: hidden;
+}
+
+.textBox--intro{
+  width: 80%;
+  margin-left: 10%;
+  text-align: center; 
+  z-index: 3;
+  margin-top: 30vh;
+  @include sm-min {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .logo{
+    max-width: 400px;
+    display: inline-block;
+  }
+  p{
+    margin-top: 30px;
+  }
+}
+
+.blood--1{
+  top: -100px;
+  left: -20px;
+}
+
+.blood--2{
+  bottom: 26%;
+  right : 6%;
+  transform: rotate(200deg);
+  .blood{
+    animation: blood 3s -0.5s infinite alternate;
+  }
+}
